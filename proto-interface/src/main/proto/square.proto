@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.flowdy.grpc.square;
+
+option java_multiple_files = true;
+
+message SquareRequest {
+  double wide = 1;
+}
+
+message SquareResponse {
+  double result = 1;
+}
+
+service SquareService {
+  rpc area(SquareRequest) returns (SquareResponse);
+  rpc circumference(SquareRequest) returns (SquareResponse);
+}
